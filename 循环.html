@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box" style="width: 200px;height: 200px;background: red"></div>
+</body>
+<script>
+    var box=document.getElementsByClassName('box')[0];
+    for(var i=0;i<10;i++){
+        console.log(i);
+        box.onclick=function(){
+            console.log(i);
+        }
+    }
+</script>
+</html>

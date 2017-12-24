@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>蘑菇街-我的买手街</title>
+    <link rel="Shortcut Icon" href="images/title.ico">
+    <script src="javascript/rem.common.js"></script>
+    <style>
+        body{
+            max-width: 667px;
+            min-width: 320px;
+            margin: 0 auto;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .header {
+            width: 100%;
+            height: 0.9rem;
+            border-bottom: 1px solid black;
+            position: relative;
+        }
+
+        .header .left {
+            width: 0.15rem;
+            height: 0.27rem;
+            background: url("images/load/back.png") no-repeat;
+            background-size: 0.15rem 0.27rem;
+            position: absolute;
+            left: 0.2rem;
+            top: 50%;
+            margin-top: -0.13rem;
+        }
+
+        .header .right {
+            width: 0.46rem;
+            height: 0.15rem;
+            background: url("images/load/menu.png") no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            right: 0.2rem;
+            top: 50%;
+            margin-top: -0.07rem;
+            transition: all 0.5s;
+        }
+        .header .middle {
+            position: absolute;
+            top: 50%;
+            margin-top: -0.2rem;
+            left: 50%;
+            margin-left: -0.3rem;
+            font-size: 0.3rem;
+        }
+
+        .location {
+            width: 100%;
+            height: 3rem;
+            padding: 0 0.3rem 0 0.3rem;
+            box-sizing: border-box;
+            position:relative;
+        }
+
+        .location .user {
+            width: 100%;
+            height: 0.92rem;
+            margin-top: 0.3rem;
+            background: #EEEEEE;
+
+        }
+
+        .location .user .pic {
+            float: left;
+            width: 0.72rem;
+            height: 0.9rem;
+            background: url("images/load/user_icon.png") no-repeat center;
+        }
+
+        .location .user .pic1 {
+            float: left;
+            width: 0.72rem;
+            height: 0.9rem;
+            background: url("images/load/pw_icon.png") no-repeat center;
+        }
+
+        .location .user .pic2 {
+            float: right;
+            width: 0.72rem;
+            height: 0.9rem;
+            background: url("images/load/pw_hide_icon.png") no-repeat center;
+            background-size:100%;
+        }
+        .location .user .pic3 {
+            float: right;
+            width: 0.72rem;
+            height: 0.9rem;
+            background: url("images/load/pw_show_icon.png") no-repeat center;
+            background-size:100%;
+        }
+
+        .location .user input {
+            width: 3rem;
+            height: 100%;
+            float: left;
+            font-size: 0.3rem;
+            border: none;
+            background: #EEEEEE;
+            outline: none;
+        }
+
+        .location .dl {
+            width: 100%;
+            height: 0.9rem;
+            margin-top: 0.5rem;
+            font-size: 0.4rem;
+            text-align: center;
+            line-height: 0.9rem;
+            background: #B9B9B9;
+            border-radius: 0.2rem;
+            color: white;
+        }
+
+        .fun {
+            width: 100%;
+            height: 0.32rem;
+            margin-top: 0.3rem;
+        }
+
+        .fun .zh {
+            float: left;
+            font-size: 0.2rem;
+            border-bottom: 1px solid #EEEEEE;
+        }
+
+        .fun .zc {
+            float: right;
+            font-size: 0.2rem;
+        }
+
+        .tk {
+            width: 100%;
+            font-size: 0.25rem;
+            padding: 0 0.2rem;
+            box-sizing: border-box;
+            margin-top: 0.3rem;
+            color: gray;
+        }
+
+        .title {
+            width: 100%;
+            font-size: 0.2rem;
+            color: gray;
+            text-align: center;
+            margin-top: 0.3rem;
+        }
+
+        .oth {
+            width: 100%;
+            font-size: 0.2rem;
+            margin-top: 0.3rem;
+            color: gray;
+        }
+
+        .oth ul li {
+            width: 32%;
+            text-align: center;
+            float: left;
+        }
+
+        .last {
+            width: 100%;
+            padding: 0.6rem 0 0.6rem 0.7rem;
+            font-size: .18rem;
+            color: gray;
+            letter-spacing: 0.01rem;
+            overflow: hidden;
+        }
+        .last ul li{
+            display: inline-block;
+        }
+        .last ul li img{
+            vertical-align: middle;
+        }
+        .last ul li+li{
+            margin-left: 0.1rem;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        #text{
+            color:red;
+            font-size: .15rem;
+            padding-left:.1rem ;
+            position:absolute;
+            top:2.3rem;
+            /*display:none;*/
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <a href="index.html"><div class="left"></div></a>
+    <div class="right"></div>
+    <div class="middle">
+        <p>登录</p>
+    </div>
+</div>
+<div class="location">
+    <form id="form" action="">
+        <div class="user">
+            <div class="pic"></div>
+            <input id="user" type="text" placeholder="手机号/邮箱/昵称">
+        </div>
+        <div class="user">
+            <div class="pic1"></div>
+            <input id="password" type="password" placeholder="密码">
+            <div class="pic2"></div>
+        </div>
+        <p id="text"></p>
+    </form>
+    <div class="dl">
+        <p id="btn">登录</p>
+    </div>
+    <div class="fun">
+        <div class="zh">
+            <p>找回密码</p>
+        </div>
+        <div class="zc">
+            <p>注册 <img src="images/load/arrow_r_icon.png" alt=""></p>
+        </div>
+    </div>
+    <div class="tk">
+        <p>为保证账户安全,请您不要设置与邮箱密码相同的账户登录密码或支付密码 <u style="color: red;">谨防诈骗!</u></p>
+    </div>
+
+
+    <div class="title">
+        <p>第三方账户登录</p>
+    </div>
+    <div class="oth">
+        <ul>
+            <li><img src="images/load/qq_icon.png" alt="">
+                <p>腾讯QQ</p></li>
+            <li><img src="images/load/sina_icon.png" alt="">
+                <p>新浪微博</p></li>
+            <li><img src="images/load/alipay_icon.png" alt="">
+                <p>支付宝</p></li>
+        </ul>
+    </div>
+
+    <div class="last">
+        <ul>
+            <li><img src="images/load/check_icon.png" alt="">7天无理由退款</li>
+            <li><img src="images/load/check_icon.png" alt="">支持货到付款</li>
+            <li><img src="images/load/check_icon.png" alt="">100%正品</li>
+        </ul>
+
+    </div>
+</div>
+
+</body>
+<script>
+    (function(){
+        function cla(a) {
+            return document.getElementsByClassName(a);
+        }
+        function id(a){
+            return document.getElementById(a);
+        }
+        var text=id('text'),btn=id('btn'),user=id('user'),password=id('password'),
+                form=id('form'),
+                user1 = form.children[1],
+                pic = user1.children[2];
+        pic.addEventListener("touchstart", function () {
+            if (pic.className == "pic2") {
+                pic.className = "pic3";
+                password.type='text';
+            } else{
+                pic.className = "pic2";
+                password.type='password';
+            }
+        });
+        btn.addEventListener('touchstart',function(e){
+            var xhr=new XMLHttpRequest();
+            xhr.open("post","ind.php");
+            xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+            xhr.send("user="+user.value+"&password="+password.value);
+            //console.log(user.value,password.value);
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4){
+                    if(xhr.status==200){
+                        var kk=xhr.responseText;
+                        console.log(kk);
+                        if(kk==0){
+                            text.innerHTML="账号或者密码错误";
+                        }else{
+//                            text.innerHTML='输入正确';
+//                            dl.innerHTML= kk;
+//                            form.style.display="none";
+                            window.location="index.html";
+                        }
+                    }
+                }
+            }
+        })
+    })();
+</script>
+<script>
+//    var dl=document.querySelector(".account");
+//    var form=document.querySelector("#myform");
+//    var user=document.querySelector("#user");
+//    var password=document.querySelector("#password");
+//    var btn=document.querySelector(".button");
+//    var val=document.querySelector("#val");
+//    dl.onclick=function(){
+//        form.style.display="block";
+//    }
+//    btn.onclick=function(){
+//                /*3个*/
+//                var xhr=new XMLHttpRequest();
+//                xhr.open("post","ind.php");
+//                xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+//                xhr.send("user="+user.value+"&password="+password.value);
+//                xhr.onreadystatechange=function(){
+//                    if(xhr.readyState==4){
+//                        if(xhr.status==200){
+//                            var kk=xhr.responseText;
+//                            if(kk==0){
+//                                val.innerHTML="账号或者密码错误"
+//                            }else{
+//                                dl.innerHTML= kk;
+//                                form.style.display="none";
+//                            }
+//
+//                        }
+//                    }
+//                }
+//            }
+</script>
+</html>

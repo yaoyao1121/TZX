@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style"  content="black">
+    <meta name="format-detection"  content="telephone=no">
+    <meta name="format-detection"  content="email=no">
+    <title>购物车</title>
+    <link rel="Shortcut Icon" href="images/title.ico">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/cart.css" type="text/css">
+    <script src="javascript/zepto.js"></script>
+    <script src="javascript/rem.common.js"></script>
+</head>
+<body>
+<div class="cart_wrap">
+    <div class="cart_top clear">
+        <div class="top_left lt" onclick="javascript:window.open('index.html','_self')"><i class="fa fa-angle-left"></i></div>
+        <div class="top_mid lt">购物车</div>
+        <div class="top_right rt">
+            <span>编辑</span>
+            <img src="images/weixin.png" alt="">
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom_c">                <p onclick="javascript:window.open('index.html','_self')" class="btn">去逛逛</p>
+
+            <div class="cart_cont">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="cart_bot">
+                <p class="title">购物车还是空的哦~</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    (function(){
+        window.onload=function(){
+            function cla(a){
+                return document.getElementsByClassName(a);
+            }
+            var resizeEvt='orientationchange' in window ? 'orientationchange':'resize',
+                    headerH=cla('cart_top')[0].offsetHeight,
+                    clientHeight = document.documentElement.clientHeight-headerH,
+                    bottom=cla('bottom')[0],
+                    bot_c=cla('bottom_c')[0],
+                    bot_cH=bot_c.offsetHeight;
+            bottom.style.height=clientHeight+'px';
+            bot_c.style.marginTop=-(bot_cH/2)+'px';
+            window.addEventListener(resizeEvt,function(){
+                headerH=cla('cart_top')[0].offsetHeight;
+                clientHeight = document.documentElement.clientHeight-headerH;
+                bottom.style.height=clientHeight+'px';
+                bot_c.style.marginTop=-(bot_cH/2)+'px';
+            });
+        }
+    })();
+</script>
+</html>

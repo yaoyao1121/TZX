@@ -1,0 +1,38 @@
+.footer_wrap{
+    width:7.5rem;
+    height:.98rem;
+    background:#fff;
+}
+.footer_wrap>div{
+    float:left;
+    width:25%;
+    height:.92rem;
+    text-align: center;
+    color:#666;
+}
+.footer_wrap>div img{
+    width:.44rem;
+    height:.44rem;
+    margin:0.1rem 0 ;
+}
+.footer_wrap>div .imgA{
+    position:relative;
+    top:.02rem;
+    left:50%;
+    margin-left:-.22rem;
+}
+.footer_wrap>div p{
+    font-size: .24rem;
+}
+.footer_wrap .footerA p.col{
+    color: #FF5777;
+}
+.footer_wrap .footer .imgA{
+    display:none;
+}
+.footer_wrap .footerA .img{
+    display:none;
+}
+.footer_wrap .footerA .imgA{
+    display:block;
+}

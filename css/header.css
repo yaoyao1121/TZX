@@ -1,0 +1,41 @@
+.header_wrap{
+    width: 7.5rem;
+    height: 0.97rem;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+}
+.header_wrap .weixin{
+    display:inline-block;
+    width: 1rem;
+    height: 100%;
+    background: url("../images/weixin.png") no-repeat 0.27rem center;
+    background-size: 0.44rem auto;
+}
+.header_wrap .search{
+    display: inline-block;
+    height:100%;
+    line-height: 0.97rem;
+    vertical-align: middle;
+}
+.header_wrap #search-form-input{
+    width: 5.5rem;
+    padding-left: 0.6rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.24rem;
+    border: none;
+    background: #eee url("../images/search.png") no-repeat 0.15rem center;
+    background-size: 0.31rem auto;
+    border-radius: 0.06rem;
+}
+.header_wrap #search-form-input::-webkit-input-placeholder{
+    color:#9E9E9E;
+}
+.header_wrap .cart{
+    display: inline-block;
+    width: 1rem;
+    height: 100%;
+    background: url("../images/cart.png") no-repeat 0.31rem center;
+    background-size: 0.44rem auto;
+}
